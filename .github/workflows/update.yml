@@ -3,8 +3,7 @@ name: Update
 on:
   schedule:
     # 15:00, 15:05 UTC | 16:00, 16:05 BST
-    # - cron:  '0,5 15 * * *'
-    - cron:  '*/5 * * * *'
+    - cron:  '0,5 15 * * *'
 
 jobs:
   build:
