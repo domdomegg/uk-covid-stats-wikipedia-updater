@@ -44,7 +44,7 @@ req = s.post('https://en.wikipedia.org/w/api.php?action=login&format=json', {
     'lgpassword': os.environ.get('WIKIPEDIA_BOT_PASSWORD'),
     'lgtoken': req.json()['query']['tokens']['logintoken']
 })
-if req.json()['login']['result'] != 'Success':
+if "login" not in req.json() or req.json()['login']['result'] != 'Success':
     print('Failed to login to Wikipedia:')
     print(req.text)
     exit(1)
@@ -96,8 +96,9 @@ req = s.post('https://en.wikipedia.org/w/api.php?action=edit&format=json&title=U
     'summary': '[bot] United Kingdom'
 })
 
-if req.json()['edit']['result'] == 'Success':
+if "edit" in req.json() and ['edit']['result'] == 'Success':
     print('Edit complete!')
 else:
     print('Something went wrong making edits:')
     print(req.text)
+    exit(1)
