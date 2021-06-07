@@ -7,12 +7,11 @@ Updates the Wikipedia page [`Template:COVID-19 pandemic data`](https://en.wikipe
 Set up a Wikipedia bot username and password [here](https://en.wikipedia.org/wiki/Special:BotPasswords)
 
 ```
-pip install requests
+pipenv install
 ```
 
 ## Usage
 
-
 ```
-WIKIPEDIA_BOT_USERNAME=username WIKIPEDIA_BOT_PASSWORD=password python script.py
+WIKIPEDIA_BOT_USERNAME=username WIKIPEDIA_BOT_PASSWORD=password pipenv run python script.py
 ```
